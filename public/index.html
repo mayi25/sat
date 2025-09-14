@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div id="login-container" class="container">
+        <h1>Welcome</h1>
+        <p>Please sign in to continue.</p>
+        <button id="login-btn">Sign in with Google</button>
+    </div>
+
+    <div id="main-container" class="container" style="display: none;">
+        <div id="user-info">
+            <p>Welcome, <span id="user-name"></span>!</p>
+            <button id="logout-btn">Sign out</button>
+        </div>
         <h1>Quiz Questions</h1>
         <div id="questions-container">
             <!-- Questions will be loaded here -->
@@ -16,6 +26,7 @@
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <!-- Your script -->
