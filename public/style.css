@@ -126,3 +126,69 @@ h1 {
 .question-card button:hover {
     background-color: #27ae60;
 }
+
+#chat-container {
+    margin-top: 40px;
+    border-top: 1px solid #ecf0f1;
+    padding-top: 20px;
+}
+
+#chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ecf0f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+}
+
+.chat-message.user {
+    text-align: right;
+}
+
+.chat-message p {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 18px;
+    margin: 0;
+}
+
+.chat-message.user p {
+    background-color: #3498db;
+    color: white;
+}
+
+.chat-message.gemini p {
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+#chat-input-container {
+    display: flex;
+}
+
+#chat-input {
+    flex-grow: 1;
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#chat-send-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chat-send-btn:hover {
+    background-color: #2980b9;
+}
