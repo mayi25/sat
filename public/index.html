@@ -3,37 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firestore Questions</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div id="login-container" class="container">
-        <h1>Welcome</h1>
-        <p>Please sign in to continue.</p>
-        <button id="login-btn">Sign in with Google</button>
-    </div>
-
-    <div id="main-container" class="container" style="display: none;">
-        <div id="user-info">
-            <p>Welcome, <span id="user-name"></span>!</p>
-            <button id="logout-btn">Sign out</button>
+    <div class="grid-container">
+                <div id="user-profile" class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="User Profile Picture" class="profile-pic">
+            <h2 class="user-name">User Name</h2>
         </div>
-        <h1>Quiz Questions</h1>
-        <div id="questions-container">
-            <!-- Questions will be loaded here -->
+                <div id="study-group" class="grid-item">
+            <h3>Your Study Groups</h3>
+            <ul class="study-group-list">
+                <li>Group A</li>
+                <li>Group B</li>
+                <li>Group C</li>
+            </ul>
+            <button class="btn">Create or Join Group</button>
         </div>
-
-        <div id="chat-container">
-            <h2>Chat with Gemini</h2>
-            <div id="chat-messages"></div>
-            <div id="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask Gemini a question...">
-                <button id="chat-send-btn">Send</button>
+                <div id="study-summary" class="grid-item">
+            <h3>Your Study Summary</h3>
+            <div class="chart-placeholder">
+                <!-- Chart will go here -->
+                <p>Study Progress Chart</p>
+            </div>
+            <div class="study-stats">
+                <div><strong>Total Study Time:</strong> 42 hours</div>
+                <div><strong>Subjects Studied:</strong> Math, Science, History</div>
+                <div><strong>Completed Assignments:</strong> 15</div>
+            </div>
+            <div class="recent-activity">
+                <h4>Recent Activity</h4>
+                <ul>
+                    <li>Completed "Algebra Quiz" - 95%</li>
+                    <li>Read "Chapter 5: The Cold War"</li>
+                    <li>Practiced "Chemical Equations" for 1 hour</li>
+                </ul>
             </div>
         </div>
+                <div id="class-list" class="grid-item">
+            <h3>Your Classes</h3>
+            <ul class="class-list">
+                <li>
+                    <span class="class-name">Introduction to Algebra</span>
+                    <span class="class-teacher">Mr. Smith</span>
+                </li>
+                <li>
+                    <span class="class-name">World History</span>
+                    <span class="class-teacher">Ms. Jones</span>
+                </li>
+                <li>
+                    <span class="class-name">Biology 101</span>
+                    <span class="class-teacher">Dr. Davis</span>
+                </li>
+            </ul>
+            <button class="btn">Add/Browse Classes</button>
+        </div>
+                <div id="real-time-feedback" class="grid-item">
+            <h3>Real-Time Feedback</h3>
+            <div class="feedback-feed">
+                <div class="feed-item notification">
+                    <p><strong>New Grade:</strong> 95% on "Algebra Quiz"</p>
+                </div>
+                <div class="feed-item alert">
+                    <p><strong>Upcoming Deadline:</strong> "History Essay" due tomorrow</p>
+                </div>
+                <div class="feed-item positive">
+                    <p>Great job on your study session today!</p>
+                </div>
+            </div>
+        </div>
+        <div id="personal-suggestions" class="grid-item">Personal suggestions</div>
     </div>
-
-    <!-- Your script -->
-    <script type="module" src="script.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>
