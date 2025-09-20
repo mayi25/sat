@@ -130,10 +130,13 @@ body, html {
 .class-card a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .class-card img {
-    width: 100%;
+    width: 20%;
     height: auto;
     border-radius: 5px;
 }
