@@ -113,20 +113,35 @@ body, html {
     padding: 0;
 }
 
-.class-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 15px;
-    width: 80%;
+.class-cards {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.class-list li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.class-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    text-align: center;
+    width: 30%;
+}
+
+.class-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.class-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.class-card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .feedback-feed {

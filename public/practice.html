@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayi Tutor</title>
+    <title>Practice Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="login-container" class="container">
-        <h1>Welcome</h1>
-        <p>Please sign in to continue.</p>
-        <button id="login-btn">Sign in with Google</button>
-    </div>
+    
 
-    <div id="main-container" class="container" style="display: none;">
-        <div id="user-info">
-            <p>Welcome, <span id="user-name"></span>!</p>
-            <button id="logout-btn">Sign out</button>
-        </div>
-        <h1>Quiz Questions</h1>
+    <div id="main-container" class="container">
+        <h1>SAT Practice</h1>
+        <button id="logout-btn">Sign out</button>
+        
+        
         <div id="questions-container">
+            <h2>Questions</h2>
             <!-- Questions will be loaded here -->
         </div>
 
         <div id="chat-container">
-            <h2>Chat with Gemini</h2>
+            <h2>Chat with Mayi Tutor</h2>
             <div id="chat-messages"></div>
             <div id="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask Gemini a question...">
+                <input type="text" id="chat-input" placeholder="Ask Mayi Tutor a question...">
                 <button id="chat-send-btn">Send</button>
             </div>
         </div>

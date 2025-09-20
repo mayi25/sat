@@ -8,6 +8,21 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+}
+
+#logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .container {

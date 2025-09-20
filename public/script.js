@@ -21,24 +21,15 @@ const geminiApiKey = "AIzaSyBAP3pZOO15J7EuUII7LvAxAzrfooF7h0A";
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-const loginContainer = document.getElementById('login-container');
 const mainContainer = document.getElementById('main-container');
-const loginBtn = document.getElementById('login-btn');
 const logoutBtn = document.getElementById('logout-btn');
-const userName = document.getElementById('user-name');
+
 const questionsContainer = document.getElementById('questions-container');
 const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const chatSendBtn = document.getElementById('chat-send-btn');
 
-// Sign in with Google
-loginBtn.addEventListener('click', () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-        .catch(error => {
-            console.error("Error during sign-in:", error);
-        });
-});
+
 
 // Sign out
 logoutBtn.addEventListener('click', () => {
@@ -49,15 +40,14 @@ logoutBtn.addEventListener('click', () => {
 onAuthStateChanged(auth, user => {
     if (user) {
         // User is signed in
-        loginContainer.style.display = 'none';
         mainContainer.style.display = 'block';
-        userName.textContent = user.displayName;
         loadQuestions();
     } else {
         // User is signed out
-        loginContainer.style.display = 'block';
         mainContainer.style.display = 'none';
         questionsContainer.innerHTML = ''; // Clear questions
+        // Redirect to login page
+        window.location.href = 'index.html';
     }
 });
 
@@ -74,7 +64,7 @@ async function loadQuestions() {
             const questionCard = document.createElement('div');
             questionCard.className = 'question-card';
 
-            const questionText = document.createElement('h2');
+            const questionText = document.createElement('h3');
             questionText.textContent = question.question_text; // Assuming a 'text' field in your document
 
             const answerInput = document.createElement('input');

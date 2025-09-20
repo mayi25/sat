@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>SAT Home Page</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <div class="grid-container">
                 <div id="user-profile" class="grid-item">
-            <img src="https://via.placeholder.com/150" alt="User Profile Picture" class="profile-pic">
-            <h2 class="user-name">User Name</h2>
+            <img src="image/lion.png" alt="User Profile Picture" class="profile-pic">
+            <h2 class="user-name">Mayi</h2>
             <a href="profile.html" class="edit-icon">&#9998;</a>
         </div>
                 <div id="study-group" class="grid-item">
-            <h3>Your Study Groups</h3>
+            <h3>SAT Study Groups</h3>
             <ul class="study-group-list">
                 <li>Group A</li>
                 <li>Group B</li>
@@ -23,10 +23,10 @@
             <button class="btn">Create or Join Group</button>
         </div>
                 <div id="study-summary" class="grid-item">
-            <h3>Your Study Summary</h3>
+            <h3>SAT Study Summary</h3>
             <div class="chart-placeholder">
                 <!-- Chart will go here -->
-                <p>Study Progress Chart</p>
+                <img src="image/progress.png" alt="Study Progress Chart">
             </div>
             <div class="study-stats">
                 <div><strong>Total Study Time:</strong> 42 hours</div>
@@ -43,21 +43,36 @@
             </div>
         </div>
                 <div id="class-list" class="grid-item">
-            <h3>Your Classes</h3>
-            <ul class="class-list">
-                <li>
-                    <span class="class-name">Introduction to Algebra</span>
-                    <span class="class-teacher">Mr. Smith</span>
-                </li>
-                <li>
-                    <span class="class-name">World History</span>
-                    <span class="class-teacher">Ms. Jones</span>
-                </li>
-                <li>
-                    <span class="class-name">Biology 101</span>
-                    <span class="class-teacher">Dr. Davis</span>
-                </li>
-            </ul>
+            <h3>SAT Classes</h3>
+            <div class="class-cards">
+                <div class="class-card">
+                    <a href="practice.html">
+                        <img src="image/class.png" alt="Class Image">
+                        <div class="class-card-content">
+                            <span class="class-name">Introduction to Algebra</span>
+                            <span class="class-teacher">Mr. Smith</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="class-card">
+                    <a href="practice.html">
+                        <img src="image/class.png" alt="Class Image">
+                        <div class="class-card-content">
+                            <span class="class-name">World History</span>
+                            <span class="class-teacher">Ms. Jones</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="class-card">
+                    <a href="practice.html">
+                        <img src="image/class.png" alt="Class Image">
+                        <div class="class-card-content">
+                            <span class="class-name">Biology 101</span>
+                            <span class="class-teacher">Dr. Davis</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <button class="btn">Add/Browse Classes</button>
         </div>
                 <div id="real-time-feedback" class="grid-item">
