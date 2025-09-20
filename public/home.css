@@ -1,0 +1,152 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "topleft middletop topright"
+        "bottomleft middlebottom bottomright";
+    gap: 10px;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#user-profile {
+    grid-area: topleft;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#study-group {
+    grid-area: bottomleft;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#study-summary {
+    grid-area: middletop;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#class-list {
+    grid-area: middlebottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#real-time-feedback {
+    grid-area: topright;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#personal-suggestions {
+    grid-area: bottomright;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    margin: 0;
+}
+
+.study-group-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.study-group-list li {
+    margin-bottom: 5px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Example color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chart-placeholder {
+    width: 80%;
+    height: 150px;
+    border: 1px dashed #ccc;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.study-stats {
+    margin-bottom: 15px;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.class-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+.class-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.feedback-feed {
+    width: 100%;
+}
+
+.feed-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.feed-item.notification {
+    background-color: #e3f2fd; /* Light blue */
+}
+
+.feed-item.alert {
+    background-color: #ffebee; /* Light red */
+}
+
+.feed-item.positive {
+    background-color: #e8f5e9; /* Light green */
+}
