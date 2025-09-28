@@ -207,3 +207,8 @@ h1 {
 #chat-send-btn:hover {
     background-color: #2980b9;
 }
+
+.question-card.selected {
+    border-left-color: #f1c40f;
+    background-color: #fdf5e6;
+}

@@ -21,20 +21,13 @@ const geminiApiKey = "AIzaSyBAP3pZOO15J7EuUII7LvAxAzrfooF7h0A";
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-const mainContainer = document.getElementById('main-container');
-const logoutBtn = document.getElementById('logout-btn');
+let currentQuestionText = ''; // To store the text of the clicked question
 
+const mainContainer = document.getElementById('main-container');
 const questionsContainer = document.getElementById('questions-container');
 const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const chatSendBtn = document.getElementById('chat-send-btn');
-
-
-
-// Sign out
-logoutBtn.addEventListener('click', () => {
-    signOut(auth);
-});
 
 // Auth state listener
 onAuthStateChanged(auth, user => {
@@ -64,6 +57,14 @@ async function loadQuestions() {
             const questionCard = document.createElement('div');
             questionCard.className = 'question-card';
 
+            // Add a click listener to the card
+            questionCard.addEventListener('click', () => {
+                currentQuestionText = question.question_text;
+                // Optional: Add a visual indicator that the card is selected
+                document.querySelectorAll('.question-card').forEach(card => card.classList.remove('selected'));
+                questionCard.classList.add('selected');
+            });
+
             const questionText = document.createElement('h3');
             questionText.textContent = question.question_text; // Assuming a 'text' field in your document
 
@@ -77,7 +78,8 @@ async function loadQuestions() {
             const resultText = document.createElement('p');
             resultText.textContent = '';
 
-            submitButton.addEventListener('click', () => {
+            submitButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card click event from firing
                 const userAnswer = answerInput.value.trim();
                 if (userAnswer.toLowerCase() === question.correct_answer.toLowerCase()) {
                     resultText.textContent = 'Correct!';
@@ -120,7 +122,14 @@ async function sendMessage() {
     chatSendBtn.disabled = true;
 
     try {
-        const result = await chat.sendMessageStream(messageText);
+        // Prepend the current question text to the message
+        const messageWithContext = currentQuestionText 
+            ? `Question: "${currentQuestionText}"
+
+My question is: ${messageText}`
+            : messageText;
+
+        const result = await chat.sendMessageStream(messageWithContext);
         let text = '';
         const geminiMessageElement = appendMessage('', 'gemini');
         for await (const chunk of result.stream) {
