@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Groups</title>
+    <link rel="stylesheet" href="group.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Study Groups</h1>
+        <div class="group-section">
+            <h2>Create a New Group</h2>
+            <input type="text" id="new-group-name" placeholder="Group Name">
+            <select id="course-select">
+                <option value="">Select a Course</option>
+                <option value="algebra">Introduction to Algebra</option>
+                <option value="history">World History</option>
+                <option value="biology">Biology 101</option>
+            </select>
+            <button id="create-group-btn">Create Group</button>
+        </div>
+        <div class="group-section">
+            <h2>Join a Group</h2>
+            <input type="text" id="join-group-code" placeholder="Enter Group Code">
+            <button id="join-group-btn">Join Group</button>
+        </div>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+    <script src="group.js"></script>
+</body>
+</html>

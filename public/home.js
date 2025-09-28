@@ -26,6 +26,7 @@ onAuthStateChanged(auth, user => {
 const logoutButton = document.createElement('button');
 logoutButton.id = 'logout-btn';
 logoutButton.textContent = 'Logout';
+logoutButton.style.backgroundColor = '#007bff';
 logoutButton.addEventListener('click', () => {
     signOut(auth);
 });
